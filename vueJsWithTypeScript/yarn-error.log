@@ -1,0 +1,38 @@
+Arguments: 
+  /Users/mo/.nodebrew/node/v8.11.1/bin/node /usr/local/bin/yarn init
+
+PATH: 
+  /Users/mo/.nodebrew/current/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/mo/.nodebrew/current/bin:/usr/local/sbin
+
+Yarn version: 
+  0.19.1
+
+Node version: 
+  8.11.1
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "vueJsWithTypeScript",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": {},
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  TypeError: Cannot convert object to primitive value
+      at Object.<anonymous> (/usr/local/Cellar/yarn/0.19.1/libexec/lib/node_modules/yarn/lib/cli/commands/init.js:103:27)
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/0.19.1/libexec/lib/node_modules/yarn/node_modules/babel-runtime/helpers/asyncToGenerator.js:17:30)
+      at /usr/local/Cellar/yarn/0.19.1/libexec/lib/node_modules/yarn/node_modules/babel-runtime/helpers/asyncToGenerator.js:28:13
+      at <anonymous>
+      at process._tickCallback (internal/process/next_tick.js:188:7)

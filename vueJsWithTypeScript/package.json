@@ -1,0 +1,10 @@
+{
+  "name": "vueJsWithTypeScript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {},
+  "license": "MIT",
+  "dependencies": {
+    "@vue/cli": "^4.1.1"
+  }
+}
