@@ -1,5 +1,5 @@
 <template>
-    <button>My Button</button>
+    <button @click="onClick">My Button</button>
 </template>
 
 <script lang="ts">
@@ -9,6 +9,10 @@
     export default class MyButton extends Vue {
         @Prop()
         public greet?: string;
+
+        public onClick() {
+            alert(this.greet);
+        }
     }
 
 </script>
