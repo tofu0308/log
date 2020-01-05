@@ -7,12 +7,16 @@
 
     @Component
     export default class ResetButton extends Vue {
-        @Prop({required: true})
-        public initialValue!: string;
+        private initialValue!: string;
 
         /** モデルバインドのために記述必須 */
         @Prop()
         public value!: string;
+
+        /** ライフサイクルフック */
+        public created() {
+            this.initialValue = this.value
+        }
 
         /** モデルバインドのために記述必須 */
         @Emit()
