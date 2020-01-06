@@ -15,7 +15,7 @@
 
         /** ライフサイクルフック */
         public created() {
-            this.initialValue = this.value
+            this.initialValue = this.value;
         }
 
         /** モデルバインドのために記述必須 */
