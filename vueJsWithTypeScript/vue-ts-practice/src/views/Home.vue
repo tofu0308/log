@@ -14,7 +14,7 @@
 </template>
 
 <script lang="ts">
-    import { Component, Vue } from 'vue-property-decorator';
+    import { Component, Vue, Watch } from 'vue-property-decorator';
     import MyButton from '@/components/MyButton.vue';
     import ResetButton from '@/components/ResetButton.vue';
 
@@ -30,6 +30,13 @@
 
       public get isRegulars(): boolean {
         return this.count >= 5;
+      }
+
+      @Watch('count')
+      public countChanged() {
+        if (this.count === 5) {
+          alert('ボタン押下５回目:(isRegulars=true)');
+        }
       }
 
       public onMyButtonClicked(count: number) {
