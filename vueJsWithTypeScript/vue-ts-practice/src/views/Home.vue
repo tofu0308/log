@@ -5,7 +5,7 @@
         <p v-if="isRegulars">count >= 5 :isRegulars = true</p>
 
         <p>
-          <MyButton :greet="greetText" @click="onMyButtonClicked">挨拶する</MyButton>
+          <MyButton class="myButton" :greet="greetText" @click="onMyButtonClicked">挨拶する</MyButton>
         </p>
         <p>
           <ResetButton initialValue="Hello" v-model="greetText"></ResetButton>
