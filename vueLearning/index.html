@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,7 @@
 <body>
   <div id="app">
     <p>{{message}}</p>
+    <button v-on:click="reversMessage">message反転</button>
   </div>
 
   <script>
@@ -17,6 +18,11 @@
       el: '#app',
       data: {
          message: 'Hello world'
+      },
+      methods: {
+         reversMessage: function() {
+           this.message = this.message.split('').reverse().join('')
+         }
       }
     });
   
