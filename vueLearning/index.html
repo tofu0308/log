@@ -11,7 +11,7 @@
   <div id="app">
     <p>{{message}}</p>
     <button v-on:click="reversMessage">message反転</button>
-    
+
     <p>{{number + 2}}</p>
     <p>{{ok ? 'yes': 'no'}}</p>
     <p>{{sayHi()}}</p>
@@ -31,7 +31,7 @@
            this.message = this.message.split('').reverse().join('')
          },
          sayHi: function() {
-           return 'Hi'
+           return this.message
          }
       }
     });
