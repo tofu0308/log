@@ -11,6 +11,7 @@
   <div id="app">
     <p>{{message}}</p>
     <p>{{number + 2}}</p>
+    <p>{{ok ? 'yes': 'no'}}</p>
     <button v-on:click="reversMessage">message反転</button>
   </div>
 
@@ -19,7 +20,8 @@
       el: '#app',
       data: {
          message: 'Hello world',
-         number: 3
+         number: 3,
+         ok : false
       },
       methods: {
          reversMessage: function() {
