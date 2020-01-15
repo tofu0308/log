@@ -9,7 +9,7 @@
 </head>
 <body>
   <div id="app">
-    <p>{{message}}</p>
+    <p v-once>{{message}}</p>
     <p v-text="message"></p>
     <button v-on:click="reversMessage">message反転</button>
 
@@ -32,7 +32,8 @@
            this.message = this.message.split('').reverse().join('')
          },
          sayHi: function() {
-           return this.message
+          this.message = 'Hello VueJS'; 
+          return 'Hi'
          }
       }
     });
