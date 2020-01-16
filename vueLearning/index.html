@@ -16,6 +16,9 @@
     <p>{{number + 2}}</p>
     <p>{{ok ? 'yes': 'no'}}</p>
     <p>{{sayHi()}}</p>
+
+    <div>{{html}}</div>
+    <div v-html="html" ></div>
     
   </div>
 
@@ -25,7 +28,8 @@
       data: {
          message: 'Hello world',
          number: 3,
-         ok : false
+         ok : false,
+         html: '<p style="color:red;">paragraph</p>'
       },
       methods: {
          reversMessage: function() {
