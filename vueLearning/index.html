@@ -19,6 +19,9 @@
 
     <div>{{html}}</div>
     <div v-html="html" ></div>
+
+    <p><a v-bind:href="url">Google</a></p>
+    <p><a :href="url">Google</a></p>
     
   </div>
 
@@ -29,7 +32,8 @@
          message: 'Hello world',
          number: 3,
          ok : false,
-         html: '<p style="color:red;">paragraph</p>'
+         html: '<p style="color:red;">paragraph</p>',
+         url: 'https://google.com'
       },
       methods: {
          reversMessage: function() {
