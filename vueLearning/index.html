@@ -22,6 +22,8 @@
 
     <p><a v-bind:href="url">Google</a></p>
     <p><a :href="url">Google</a></p>
+    <p><a :[attribute]="url">Google</a></p>
+    <p><a v-bind="twitterObject">Twitter</a></p>
     
   </div>
 
@@ -33,7 +35,12 @@
          number: 3,
          ok : false,
          html: '<p style="color:red;">paragraph</p>',
-         url: 'https://google.com'
+         url: 'https://google.com',
+         attribute: 'href',
+         twitterObject: {
+           href: 'https://twitter.com/',
+           id: 31
+         }
       },
       methods: {
          reversMessage: function() {
