@@ -24,6 +24,13 @@
     <p><a :href="url">Google</a></p>
     <p><a :[attribute]="url">Google</a></p>
     <p><a v-bind="twitterObject">Twitter</a></p>
+
+    <p>
+      count:{{number}}
+      <br>
+      <button v-on:click="countUp">+</button>
+    </p>
+    
     
   </div>
 
@@ -32,7 +39,7 @@
       el: '#app',
       data: {
          message: 'Hello world',
-         number: 3,
+         number: 0,
          ok : false,
          html: '<p style="color:red;">paragraph</p>',
          url: 'https://google.com',
@@ -49,6 +56,9 @@
          sayHi: function() {
           this.message = 'Hello VueJS'; 
           return 'Hi'
+         },
+         countUp: function() {
+           this.number += 1;
          }
       }
     });
