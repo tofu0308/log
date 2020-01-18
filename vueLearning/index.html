@@ -29,7 +29,11 @@
       count:{{number}}
       <br>
       <button v-on:click="countUp">+</button>
+      <button v-on:click="countUp(2)">+2</button>
     </p>
+
+    <p v-on:mousemove="changeousePosition">mouse on</p>
+    <p>X:{{x}} Y:{{y}}</p>
     
     
   </div>
@@ -40,6 +44,8 @@
       data: {
          message: 'Hello world',
          number: 0,
+         x: 0,
+         y: 0,
          ok : false,
          html: '<p style="color:red;">paragraph</p>',
          url: 'https://google.com',
@@ -57,8 +63,13 @@
           this.message = 'Hello VueJS'; 
           return 'Hi'
          },
-         countUp: function() {
-           this.number += 1;
+         countUp: function(times) {
+          
+          this.number += 1 * times? times:1;
+         },
+         changeousePosition : function(event) {
+           this.x = event.clientX;
+           this.y = event.clientY;
          }
       }
     });
