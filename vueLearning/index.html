@@ -32,8 +32,11 @@
       <button v-on:click="countUp(2)">+2</button>
     </p>
 
-    <p v-on:mousemove="changeousePosition">mouse on</p>
-    <p>X:{{x}} Y:{{y}}</p>
+    <p v-on:mousemove="changeousePosition(10, $event)">mouse on</p>
+    <p>
+      座標の1/10の値を表示
+      X:{{x}} Y:{{y}}
+    </p>
     
     
   </div>
@@ -67,9 +70,9 @@
           
           this.number += 1 * times? times:1;
          },
-         changeousePosition : function(event) {
-           this.x = event.clientX;
-           this.y = event.clientY;
+         changeousePosition : function(divideNumber, event) {
+           this.x = event.clientX / divideNumber;
+           this.y = event.clientY / divideNumber;
          }
       }
     });
