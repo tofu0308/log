@@ -32,7 +32,11 @@
       <button v-on:click="countUp(2)">+2</button>
     </p>
 
-    <p v-on:mousemove="changeousePosition(10, $event)">mouse on</p>
+    <p v-on:mousemove="changeousePosition(10, $event)">
+      mouse on<br>
+      <span v-on:mousemove="noEvent">stopPropagation</span>
+      <span v-on:mousemove.stop>stop</span>
+    </p>
     <p>
       座標の1/10の値を表示
       X:{{x}} Y:{{y}}
@@ -70,9 +74,12 @@
           
           this.number += 1 * times? times:1;
          },
-         changeousePosition : function(divideNumber, event) {
+         changeousePosition: function(divideNumber, event) {
            this.x = event.clientX / divideNumber;
            this.y = event.clientY / divideNumber;
+         },
+         noEvent :function(event) {
+           event.stopPropagation();
          }
       }
     });
