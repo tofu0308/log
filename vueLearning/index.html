@@ -44,6 +44,9 @@
 
     <p><a v-on:click="preventDefault" href="https://google.com/" >Google:preventDefault</a></p>
     <p><a v-on:click.prevent href="https://google.com/" >Google:prevent</a></p>
+    <p>
+      <input type="text" v-on:keyup.enter.space>
+    </p>
     
     
   </div>
@@ -86,6 +89,9 @@
          },
          preventDefault: function() {
            event.preventDefault();
+         },
+         keyupAlert: function() {
+           alert('enter or space');
          }
       }
     });
