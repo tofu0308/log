@@ -30,6 +30,8 @@
       <br>
       <button v-on:[clickevent]="countUp">+</button>
       <button v-on:[clickevent]="countUp(2)">+2</button>
+
+      <button @[clickevent]="countUp">v-on省略記法(押すと+1)</button>
     </p>
 
     <p v-on:mousemove="changeousePosition(10, $event)">
