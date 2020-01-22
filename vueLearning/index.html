@@ -28,8 +28,8 @@
     <p>
       count:{{number}}
       <br>
-      <button v-on:click="countUp">+</button>
-      <button v-on:click="countUp(2)">+2</button>
+      <button v-on:[clickevent]="countUp">+</button>
+      <button v-on:[clickevent]="countUp(2)">+2</button>
     </p>
 
     <p v-on:mousemove="changeousePosition(10, $event)">
@@ -66,7 +66,8 @@
          twitterObject: {
            href: 'https://twitter.com/',
            id: 31
-         }
+         },
+         clickevent: 'click'
       },
       methods: {
          reversMessage: function() {
