@@ -49,6 +49,10 @@
     <p>
       <input type="text" v-on:keyup.enter.space>
     </p>
+    <hr>
+    
+    <p>{{message2}}</p>
+    <input type="text" v-model="message2">
     
     
   </div>
@@ -58,6 +62,7 @@
       el: '#app',
       data: {
          message: 'Hello world',
+         message2: 'v-model',
          number: 0,
          x: 0,
          y: 0,
