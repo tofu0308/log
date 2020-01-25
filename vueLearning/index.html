@@ -33,6 +33,10 @@
 
       <button @[clickevent]="countUp">v-on省略記法(押すと+1)</button>
     </p>
+    <p>
+      {{ lessThanThree}}
+    </p> 
+
 
     <p v-on:mousemove="changeousePosition(10, $event)">
       mouse on<br>
@@ -75,6 +79,11 @@
            id: 31
          },
          clickevent: 'click'
+      },
+      computed: {
+        lessThanThree: function() {
+          return this.number > 3 ? 'カウントは3より大きい' : 'カウントは3以下';
+        }
       },
       methods: {
          reversMessage: function() {
