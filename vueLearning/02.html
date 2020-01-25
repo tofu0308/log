@@ -18,6 +18,7 @@
     <hr>
     <h1 :style="{color: textColor, 'background-color': bgColor}">hello</h1>
     <h1 :style="styleObject">hello</h1>
+    <h1 :style="[styleObject, baseStyles]">hello</h1>
 
 
     <hr>
@@ -48,6 +49,9 @@
         bg: 'bg-blue',
         textColor: 'red',
         bgColor: 'blue',
+        baseStyles: {
+          fontSize: '72px'
+        },        
         styleObject: {
           color: 'yellow',
           'background-color': 'green'
