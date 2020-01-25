@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p v-once>{{message}}</p>
+    <p v-text="message"></p>
+    <button v-on:click="reversMessage">message反転</button>
+
+    <p>{{number + 2}}</p>
+    <p>{{ok ? 'yes': 'no'}}</p>
+    <p>{{sayHi()}}</p>
+
+    <div>{{html}}</div>
+    <div v-html="html" ></div>
+
+    <p><a v-bind:href="url">Google</a></p>
+    <p><a :href="url">Google</a></p>
+    <p><a :[attribute]="url">Google</a></p>
+    <p><a v-bind="twitterObject">Twitter</a></p>
+
+    <p>
+      count:{{number}}
+      <br>
+      <button v-on:[clickevent]="countUp">+</button>
+      <button v-on:[clickevent]="countUp(2)">+2</button>
+
+      <button @[clickevent]="countUp">v-on省略記法(押すと+1)</button>
+    </p>
+    <p>
+      他count: {{ otherNumber }}
+      <br>
+      <button @[clickevent]="otherCountUp">他+</button>
+    </p> 
+
+    <p>
+      {{ lessThanThreeComputed }}
+      {{ lessThanThreeMethod() }}
+    </p> 
+
+
+    <p v-on:mousemove="changeousePosition(10, $event)">
+      mouse on<br>
+      <span v-on:mousemove="noEvent">stopPropagation</span>
+      <span v-on:mousemove.stop>stop</span>
+    </p>
+    <p>
+      座標の1/10の値を表示
+      X:{{x}} Y:{{y}}
+    </p>
+
+    <p><a v-on:click="preventDefault" href="https://google.com/" >Google:preventDefault</a></p>
+    <p><a v-on:click.prevent href="https://google.com/" >Google:prevent</a></p>
+    <p>
+      <input type="text" v-on:keyup.enter.space>
+    </p>
+    <hr>
+    
+    <p>{{message2}}</p>
+    <input type="text" v-model="message2">
+    
+    
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+         message: 'Hello world',
+         message2: 'v-model',
+         number: 0,
+         otherNumber: 0,
+         x: 0,
+         y: 0,
+         ok : false,
+         html: '<p style="color:red;">paragraph</p>',
+         url: 'https://google.com',
+         attribute: 'href',
+         twitterObject: {
+           href: 'https://twitter.com/',
+           id: 31
+         },
+         clickevent: 'click'
+      },
+      computed: {
+        lessThanThreeComputed: function() {
+          console.log('lessThanThreeComputed');
+          return this.number > 3 ? 'カウントは3より大きい' : 'カウントは3以下';
+        }
+      },
+      methods: {
+         reversMessage: function() {
+           this.message = this.message.split('').reverse().join('')
+         },
+         sayHi: function() {
+          this.message = 'Hello VueJS'; 
+          return 'Hi'
+         },
+         countUp: function(times) {
+          this.number += 1 * times? times:1;
+         },
+         otherCountUp: function(times) {
+          this.otherNumber += 1 * times? times:1;
+         },
+         changeousePosition: function(divideNumber, event) {
+           this.x = event.clientX / divideNumber;
+           this.y = event.clientY / divideNumber;
+         },
+         noEvent :function(event) {
+           event.stopPropagation();
+         },
+         preventDefault: function() {
+           event.preventDefault();
+         },
+         keyupAlert: function() {
+           alert('enter or space');
+         },
+         lessThanThreeMethod: function() {
+          console.log('lessThanThreeMethod');
+          return this.number > 3 ? 'カウントは3より大きい' : 'カウントは3以下'; 
+         }
+      }
+    });
+  
+  </script>
+
+</body>
+</html>
