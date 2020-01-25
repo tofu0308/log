@@ -15,10 +15,12 @@
 
     <hr>
     <template v-if="ok2">
-      <p>a</p>
-      <p>b</p>
-      <p>c</p>
+      <p>if a</p>
+      <p>if b</p>
+      <p>if c</p>
     </template>
+    <p v-show="ok2">show</p>
+    <button @click="ok2 = !ok2">button</button>
   </div>
 
   <script>
