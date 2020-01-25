@@ -9,18 +9,38 @@
 </head>
 <body>
   <div id="app">
+    <h1 :class="classObject">hello</h1>
+    <button @click="isActive = !isActive">切り替え</button>
+
+    <hr>
     <p>count: {{counter}}</p>
     <button @click="counter += 1">+1</button>
     <p>{{ lessThanThree }}</p>
   </div>
 
+
+  <style>
+    .red {
+      color: red;
+    }
+
+    .bg-blue {
+      background-color: blue;
+    }
+
+  </style>
+
   <script>
     new Vue({
       el: '#app',
       data: {
-        counter: 0
+        counter: 0,
+        isActive: true
       },
       computed: {
+        classObject: function() {
+          return { red: this.isActive, 'bg-blue': !this.isActive }
+        },
         lessThanThree: function() {
          return this.counter > 3 ? '3より上' : '3以下';
         }
