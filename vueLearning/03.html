@@ -26,6 +26,9 @@
     <ul>
       <li v-for="(number, index) in numbers">{{ index }}/{{ number }}</li>
     </ul>
+    <ul>
+      <li v-for="value in object">{{value}}</li>
+    </ul>
   </div>
 
   <script>
@@ -35,7 +38,12 @@
         ok: false,
         maybeOk: true,
         ok2: true,
-        numbers: [1, 2, 3]
+        numbers: [1, 2, 3],
+        object: {
+          firstName: 'taro',
+          lastName: 'tanaka',
+          age: '21'
+        }
       },
     });
   
