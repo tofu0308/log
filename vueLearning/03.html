@@ -10,13 +10,14 @@
 <body>
   <div id="app">
     <p v-if="ok">ok</p>
+    <p v-else>not ok</p>
   </div>
 
   <script>
     new Vue({
       el: '#app',
       data: {
-        ok: true
+        ok: false
       },
     });
   
