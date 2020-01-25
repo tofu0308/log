@@ -21,6 +21,11 @@
     </template>
     <p v-show="ok2">show</p>
     <button @click="ok2 = !ok2">button</button>
+    
+    <hr>
+    <ul>
+      <li v-for="number in numbers">{{number}}</li>
+    </ul>
   </div>
 
   <script>
@@ -29,7 +34,8 @@
       data: {
         ok: false,
         maybeOk: true,
-        ok2: true
+        ok2: true,
+        numbers: [1, 2, 3]
       },
     });
   
