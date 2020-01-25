@@ -34,7 +34,14 @@
       <button @[clickevent]="countUp">v-on省略記法(押すと+1)</button>
     </p>
     <p>
-      {{ lessThanThree}}
+      他count: {{ otherNumber }}
+      <br>
+      <button @[clickevent]="otherCountUp">他+</button>
+    </p> 
+
+    <p>
+      {{ lessThanThreeComputed }}
+      {{ lessThanThreeMethod() }}
     </p> 
 
 
@@ -68,6 +75,7 @@
          message: 'Hello world',
          message2: 'v-model',
          number: 0,
+         otherNumber: 0,
          x: 0,
          y: 0,
          ok : false,
@@ -81,7 +89,8 @@
          clickevent: 'click'
       },
       computed: {
-        lessThanThree: function() {
+        lessThanThreeComputed: function() {
+          console.log('lessThanThreeComputed');
           return this.number > 3 ? 'カウントは3より大きい' : 'カウントは3以下';
         }
       },
@@ -94,8 +103,10 @@
           return 'Hi'
          },
          countUp: function(times) {
-          
           this.number += 1 * times? times:1;
+         },
+         otherCountUp: function(times) {
+          this.otherNumber += 1 * times? times:1;
          },
          changeousePosition: function(divideNumber, event) {
            this.x = event.clientX / divideNumber;
@@ -109,6 +120,10 @@
          },
          keyupAlert: function() {
            alert('enter or space');
+         },
+         lessThanThreeMethod: function() {
+          console.log('lessThanThreeMethod');
+          return this.number > 3 ? 'カウントは3より大きい' : 'カウントは3以下'; 
          }
       }
     });
