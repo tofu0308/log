@@ -12,6 +12,13 @@
     <p v-if="ok">ok</p>
     <p v-else-if="maybeOk">maybe</p>
     <p v-else>not ok</p>
+
+    <hr>
+    <template v-if="ok2">
+      <p>a</p>
+      <p>b</p>
+      <p>c</p>
+    </template>
   </div>
 
   <script>
@@ -19,7 +26,8 @@
       el: '#app',
       data: {
         ok: false,
-        maybeOk: true
+        maybeOk: true,
+        ok2: true
       },
     });
   
