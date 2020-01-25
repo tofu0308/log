@@ -15,6 +15,9 @@
     <hr>
     <h1 :class="[{red: isActive}, bg]">hello</h1>
 
+    <hr>
+    <h1 :style="{color: textColor, 'background-color': bgColor}">hello</h1>
+
 
     <hr>
     <p>count: {{counter}}</p>
@@ -41,7 +44,9 @@
         counter: 0,
         isActive: true,
         color: 'red',
-        bg: 'bg-blue'
+        bg: 'bg-blue',
+        textColor: 'red',
+        bgColor: 'blue'
       },
       computed: {
         classObject: function() {
