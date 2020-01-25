@@ -13,6 +13,10 @@
     <button @click="isActive = !isActive">切り替え</button>
 
     <hr>
+    <h1 :class="[{red: isActive}, bg]">hello</h1>
+
+
+    <hr>
     <p>count: {{counter}}</p>
     <button @click="counter += 1">+1</button>
     <p>{{ lessThanThree }}</p>
@@ -35,7 +39,9 @@
       el: '#app',
       data: {
         counter: 0,
-        isActive: true
+        isActive: true,
+        color: 'red',
+        bg: 'bg-blue'
       },
       computed: {
         classObject: function() {
