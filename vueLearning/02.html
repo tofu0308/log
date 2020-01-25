@@ -17,6 +17,7 @@
 
     <hr>
     <h1 :style="{color: textColor, 'background-color': bgColor}">hello</h1>
+    <h1 :style="styleObject">hello</h1>
 
 
     <hr>
@@ -46,7 +47,11 @@
         color: 'red',
         bg: 'bg-blue',
         textColor: 'red',
-        bgColor: 'blue'
+        bgColor: 'blue',
+        styleObject: {
+          color: 'yellow',
+          'background-color': 'green'
+        }
       },
       computed: {
         classObject: function() {
