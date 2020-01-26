@@ -24,14 +24,14 @@
     
     <hr>
     <ul>
-      <li v-for="(number, index) in numbers">{{ index }}/{{ number }}</li>
+      <li v-for="(number, index) of numbers">{{ index }}/{{ number }}</li>
     </ul>
     <ul>
-      <li v-for="(value, key, index) in object">{{index}} / {{key}} : {{value}}</li>
+      <li v-for="(value, key, index) of object">{{index}} / {{key}} : {{value}}</li>
     </ul>
 
     <ul>
-      <li v-for="n in 10">{{n}}</li>
+      <li v-for="n of 10">{{n}}</li>
     </ul>
     <hr>
 
