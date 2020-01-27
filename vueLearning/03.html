@@ -35,6 +35,12 @@
     </ul>
     <hr>
 
+    <div v-for="fruit in fruits" :key="fruit">
+      <p>{{fruit}}</p>
+      <input type="text">
+    </div>
+    <button @click="remove">先頭を削除</button>
+
 
   </div>
 
@@ -46,11 +52,17 @@
         maybeOk: true,
         ok2: true,
         numbers: [1, 2, 3],
+        fruits: ['りんご', 'バナナ', 'ぶどう'],
         object: {
           firstName: 'taro',
           lastName: 'tanaka',
           age: '21'
         }
+      },
+      methods: {
+        remove: function() {
+          this.fruits.shift();
+        } 
       },
     });
   
