@@ -8,11 +8,25 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-  <ul>
-    <li><a href="01.html">01</a></li>
-    <li><a href="02.html">02</a></li>
-    <li><a href="03.html">03</a></li>
-    <li><a href="04.html">04</a></li>
-  </ul>
+  <div id="app1">{{message}}</div>
+  <div id="app2">{{message}}</div>
+
+  <script>
+    new Vue({
+      el: '#app1',
+      data: {
+        message: 'インスタンス１'
+      },
+    });
+  
+    new Vue({
+      el: '#app2',
+      data: {
+        message: 'インスタンス2'
+      }
+
+    });
+  </script>
+
 </body>
 </html>
