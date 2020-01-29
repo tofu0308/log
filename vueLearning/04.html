@@ -12,12 +12,14 @@
   <div id="app2">{{message}}</div>
 
   <script>
-    new Vue({
+    const vm = new Vue({
       el: '#app1',
       data: {
         message: 'インスタンス１'
       },
     });
+
+    vm.message = '書き換え';
   
     new Vue({
       el: '#app2',
