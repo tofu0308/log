@@ -14,6 +14,12 @@
     <button @click="changeMessage1">インスタンス1を変更</button>
   </div>
 
+  <hr>
+
+  <div id="app3">
+    {{message}}
+  </div>
+
   <script>
     const vm1 = new Vue({
       el: '#app1',
@@ -34,8 +40,18 @@
           vm1.message ='インスタンス2から変更を加える'
         }
       }
-
     });
+
+    const vm3  = new Vue({
+      el: '#app3',
+      data: {
+        message: 'インスタンス3'
+      }
+    });
+
+    vm3.name = 'なまえ';
+    // getter setterの確認
+    console.log(vm3);
   </script>
 
 </body>
