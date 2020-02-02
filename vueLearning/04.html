@@ -42,16 +42,23 @@
       }
     });
 
+    const data = {
+      message: 'インスタンス3',
+      name: 'なまえ'
+    };
+
     const vm3  = new Vue({
       el: '#app3',
-      data: {
-        message: 'インスタンス3'
-      }
+      data: data
     });
 
-    vm3.name = 'なまえ';
+    // vm3.name = 'なまえ';
+    
     // getter setterの確認
     console.log(vm3);
+    console.log(vm3.$data);
+    console.log(vm3.$el);
+    console.log(data === vm3.$data)
   </script>
 
 </body>
