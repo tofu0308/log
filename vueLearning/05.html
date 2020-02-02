@@ -8,12 +8,17 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-  <ul>
-    <li><a href="01.html">01</a></li>
-    <li><a href="02.html">02</a></li>
-    <li><a href="03.html">03</a></li>
-    <li><a href="04.html">04</a></li>
-    <li><a href="05.html">05</a></li>
-  </ul>
+  <div id="app">
+  </div>
+
+  <script>
+    new Vue({
+      data: {
+        message: 'template'
+      },
+      template: '<h1>テスト:{{message}}</h1>'
+    }).$mount('#app');
+  </script>
+
 </body>
 </html>
