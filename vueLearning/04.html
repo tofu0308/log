@@ -21,6 +21,13 @@
     <p>{{mydata}}</p>
   </div>
 
+  <hr>
+
+  <div id="app4">
+    {{message}}
+  </div>
+
+
   <script>
     const vm1 = new Vue({
       el: '#app1',
@@ -65,6 +72,15 @@
     console.log(vm3.$data);
     console.log(vm3.$el);
     console.log(data === vm3.$data)
+  
+    const vm4 = new Vue({
+      data: {
+        message: '$mountの確認'
+      }
+    });
+
+    vm4.$mount('#app4')
+  
   </script>
 
 </body>
