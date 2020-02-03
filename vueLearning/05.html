@@ -24,10 +24,17 @@
         message: 'render'
       },
       render: function(createElement) {
+        console.log(createElement('h1', `hello, ${this.message}`));
         return createElement('h1', `hello, ${this.message}`);
 
       }
     }).$mount('#app2 ');
+
+    const dir = document.createElement('div');
+
+    console.log(dir);
+    console.log(document);
+    console.dir(document);
 </script>
 
 </body>
