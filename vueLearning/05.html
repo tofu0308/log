@@ -8,8 +8,8 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-  <div id="app">
-  </div>
+  <div id="app"></div>
+  <div id="app2"></div>
 
   <script>
     new Vue({
@@ -18,7 +18,17 @@
       },
       template: '<h1>テスト:{{message}}</h1>'
     }).$mount('#app');
-  </script>
+
+    new Vue({
+      data: {
+        message: 'render'
+      },
+      render: function(createElement) {
+        return createElement('h1', `hello, ${this.message}`);
+
+      }
+    }).$mount('#app2 ');
+</script>
 
 </body>
 </html>
