@@ -11,6 +11,13 @@
   <div id="app"></div>
   <div id="app2"></div>
 
+  <hr>
+  <div id="app3">
+    <h1>こんにちは、{{name}}</h1>
+    <button @click="name = '名前'">名前変更</button>
+    <button @click="destroy">インスタンスを破壊</button>
+  </div>
+
   <script>
     new Vue({
       data: {
@@ -35,6 +42,44 @@
     console.log(dir);
     console.log(document);
     console.dir(document);
+
+
+    new Vue({
+      el: '#app3',
+      data: {
+        name: 'なまえ'
+      },
+      beforeCreate: function() {
+        console.log('beforeCreate');
+      },
+      created: function() {
+        console.log('created');
+      },
+      beforeMount: function() {
+        console.log('beforeMount');
+      },
+      mounted: function() {
+        console.log('mounted');
+      },
+      beforeUpdate: function() {
+        console.log('beforeUpdate');
+      },
+      updated: function() {
+        console.log('updated');
+      },
+      beforeDestroy: function() {
+        console.log('beforeDestroy');
+      },
+      destroyed: function() {
+        console.log('destroyed');
+      },
+      methods: {
+        destroy: function() {
+          this.$destroy()
+        }
+      }
+
+    });
 </script>
 
 </body>
