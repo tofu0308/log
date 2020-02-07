@@ -16,10 +16,18 @@
     <h1>こんにちは、{{name}}</h1>
     <button @click="name = '名前'">名前変更</button>
     <button @click="destroy">インスタンスを破壊</button>
+
+    <hello></hello>
+    <hello></hello>
+    <hello></hello>
   </div>
 
   <script>
-    new Vue({
+    Vue.component('hello', {
+      template: '<p>hello</p>'
+    });
+
+new Vue({
       data: {
         message: 'template'
       },
@@ -79,6 +87,11 @@
         }
       }
 
+    });
+
+    new Vue({
+      el: 'hello',
+      template: '<p>hello</p>'
     });
 </script>
 
