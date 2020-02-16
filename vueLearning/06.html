@@ -12,8 +12,14 @@
     <my-component></my-component>
     <my-component></my-component>
   </div>
+
+  <div id="app2">
+    <my-component></my-component>
+    <my-component></my-component>
+  </div>
+  
 <script>
-  Vue.component('my-component', {
+  const component = {
     data: function() {
       return {
         number: 12
@@ -30,11 +36,19 @@
         this.number += 1;
       }
     }
-    
-  });
+  }
+  
+  // Vue.component('my-component', { });
   
   new Vue({
     el: '#app',
+    components: {
+      'my-component': component
+    }
+  });
+
+  new Vue({
+    el: '#app2',
   });
 </script>
 
