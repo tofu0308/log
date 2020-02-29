@@ -1,3 +1,16 @@
 <template>
-  <likeNumber></likeNumber>
+  <div>
+    <likeHeader></likeHeader>
+    <likeNumber></likeNumber>
+  </div>
 </template>
+
+<script>
+import LikeHeader from './likeHeader.vue';
+
+export default {
+  components: {
+    LikeHeader
+  }
+}
+</script>
