@@ -14,3 +14,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  div {
+    border: solid 1px blue;
+  }
+</style>
