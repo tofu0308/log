@@ -1,3 +1,3 @@
 <template>
-    <h1>like</h1>
+    <h1>total like number</h1>
 </template>
