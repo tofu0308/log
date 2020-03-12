@@ -11,7 +11,7 @@ export default {
     totalNumber: {
       type: Number, // type(型)
       // required :true 必須かどうか
-      default: 10 // 指定がなければデフォルト値を設定
+      default: 20 // 指定がなければデフォルト値を設定
     }
   },
   computed: {
