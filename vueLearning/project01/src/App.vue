@@ -1,7 +1,10 @@
 <template>
   <div>
-    <likeHeader></likeHeader>
-    <p>{{ number }}</p>
+    <likeHeader>
+      <h1>total like number</h1>
+      <p>{{ number }}</p>
+    </likeHeader>
+    
     <likeNumber :total-number="number" v-on:my-click="incrementNumber"></likeNumber>
     <likeNumber :total-number="number"></likeNumber>
   </div>

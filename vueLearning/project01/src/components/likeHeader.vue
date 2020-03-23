@@ -1,3 +1,11 @@
 <template>
-    <h1>total like number</h1>
+    <div>
+        <slot></slot>
+    </div>
 </template>
+
+<script>
+export default {
+    props: ['headerText']
+}
+</script>>
