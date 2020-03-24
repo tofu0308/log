@@ -1,8 +1,6 @@
 <template>
   <div>
-    <likeHeader header-text="hello">
-      <h1>total like number</h1>
-      <p>{{ number }}</p>
+    <likeHeader>
     </likeHeader>
     
     <likeNumber :total-number="number" v-on:my-click="incrementNumber"></likeNumber>
