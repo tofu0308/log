@@ -1,6 +1,6 @@
 <template>
   <div>
-    <likeHeader>
+    <likeHeader header-text="hello">
       <h1>total like number</h1>
       <p>{{ number }}</p>
     </likeHeader>
@@ -33,5 +33,9 @@ export default {
 <style scoped>
   div {
     border: solid 1px blue;
+  }
+
+  h1 {
+      color :blue;
   }
 </style>
