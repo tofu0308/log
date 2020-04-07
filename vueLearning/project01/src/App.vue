@@ -4,6 +4,8 @@
       <template v-slot:title>
         <h2>hello slot</h2>
       </template>
+
+      <h3>default</h3>
       
       <template v-slot:number>
         <p>{{number}}</p>
