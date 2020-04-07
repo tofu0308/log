@@ -1,6 +1,7 @@
 <template>
   <div>
     <likeHeader>
+      <h2>hello slot</h2>
     </likeHeader>
     
     <likeNumber :total-number="number" v-on:my-click="incrementNumber"></likeNumber>
